@@ -1,0 +1,31 @@
+main: me.k37.healthy.Main
+name: Healthy
+version: 1.4
+author: k37
+api-version: 1.16
+
+commands:
+  hearts:
+    description: Sets users hearts to amount specified, if no amount is specified then it defaults to 20(max health).
+    usage: /<command> [player] [amount]
+    aliases: ht
+  myhearts:
+    description: Sets hearts to an amount or max(20) if not specified
+    usage: /<command> [amount]
+    aliases: mht
+  foodpoints:
+    description: Sets users foodpoints to an amount or max(20) if not specified
+    usage: /<command> [player] [amount]
+    aliases: fp
+  saturation:
+    description: Sets users saturation to an amount or max(5s) if not specified
+    usage: /<command> [player] [amount]
+    aliases: sat
+  myfood:
+    description: Sets foodpoints to an amount or max(20) if not specified
+    usage: /<command> [amount]
+    aliases: mfp
+  mysaturation:
+    description: Sets saturation to an amount or max(5) if not specified
+    usage: /<command> [amount]
+    aliases: mysat
