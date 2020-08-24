@@ -1,5 +1,3 @@
-# healthy
-Your average Spigot plugin that adjusts the health/foodpoints/saturation of players
 
 <img src="https://github.com/k37x/healthy/blob/master/HealthyArt/HealthyLogo.png" alt="Healthy Logo" width="640" height="150">
 
