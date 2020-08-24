@@ -24,7 +24,8 @@ public class MySaturation implements CommandExecutor{
 		// mysaturation
 		
 		if(cmd.getName().equalsIgnoreCase("MySaturation") || cmd.getName().equalsIgnoreCase("mysat")) {
-			
+			if(player.hasPermission("healthy.mysat") == true) {
+	
 				if (args.length == 0) {
 					player.sendMessage(ChatColor.YELLOW + "Saturation set to 5(max).");
 					player.setSaturation(5);
@@ -44,6 +45,9 @@ public class MySaturation implements CommandExecutor{
 				
 				
 			}
+		}else {
+			player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
+		}
 			
 		return true;
 		

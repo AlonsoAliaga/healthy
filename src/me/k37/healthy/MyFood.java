@@ -25,6 +25,8 @@ public class MyFood implements CommandExecutor{
 		
 		if(cmd.getName().equalsIgnoreCase("MyFood") || cmd.getName().equalsIgnoreCase("mfp")) {
 			
+			if(player.hasPermission("healthy.myfood") == true) {
+		
 				if (args.length == 0) {
 					player.sendMessage(ChatColor.YELLOW + "Foodpoints set to 20.");
 					player.setFoodLevel(20);
@@ -44,6 +46,9 @@ public class MyFood implements CommandExecutor{
 				
 				
 			}
+		}else {
+			player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
+		}
 			
 		return true;
 		

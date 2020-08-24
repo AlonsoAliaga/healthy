@@ -25,7 +25,8 @@ public class MyHearts implements CommandExecutor{
 		// hearts
 		
 		if(cmd.getName().equalsIgnoreCase("MyHearts") || cmd.getName().equalsIgnoreCase("ht")) {
-			
+			if(player.hasPermission("healthy.myhearts") == true) {
+
 				if (args.length == 0) {
 					double maxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue();
 					player.sendMessage(ChatColor.YELLOW + "Hearts set to 20.");
@@ -45,6 +46,9 @@ public class MyHearts implements CommandExecutor{
 					}
 				
 				
+			}
+			}else {
+				player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
 			}
 			
 		return true;

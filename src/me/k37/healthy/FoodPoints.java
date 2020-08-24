@@ -25,7 +25,7 @@ public class FoodPoints implements CommandExecutor{
 		
 		if(cmd.getName().equalsIgnoreCase("FoodPoints") || cmd.getName().equalsIgnoreCase("fp")) {
 			
-			
+			if(player.hasPermission("healthy.foodpoints") == true) {
 				if (args.length == 0) {
 					player.sendMessage(ChatColor.RED + "Please specify /foodpoints [player] [amount]");
 					return true;
@@ -62,6 +62,9 @@ public class FoodPoints implements CommandExecutor{
 					player.sendMessage(ChatColor.RED + "Player not online!");
 					return true;
 				}
+			}
+			}else {
+				player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
 			}
 			
 			

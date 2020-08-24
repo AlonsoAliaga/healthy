@@ -25,7 +25,7 @@ public class Hearts implements CommandExecutor{
 		
 		if(cmd.getName().equalsIgnoreCase("Hearts") || cmd.getName().equalsIgnoreCase("ht")) {
 			
-			
+			if(player.hasPermission("healthy.hearts") == true) {
 				if (args.length == 0) {
 					player.sendMessage(ChatColor.RED + "Please specify /hearts [player] [amount]");
 					return true;
@@ -62,6 +62,9 @@ public class Hearts implements CommandExecutor{
 					player.sendMessage(ChatColor.RED + "Player not online!");
 					return true;
 				}
+			}
+			}else {
+				player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
 			}
 			
 			
