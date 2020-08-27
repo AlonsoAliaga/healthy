@@ -3,7 +3,7 @@
 
 ***
 
-# Your average health/foodpoint/saturation adjustment plugin!
+# Your average health plugin!
 
 ### Built with Spigot Jar: 1.16.1 
 
@@ -11,37 +11,33 @@
 
 Healthy was made because I noticed that there are zero plugins that offer adjusting these basic stats for a player(specifically). Now you're probably wondering why on earth would I need that? And you probably don't. But I've had moments where I needed to adjust those basic stats for testing things and I'm sure implementing it into a plugin you're working on would be a pain just to remove it later. I do plan to add more health related things for a player but for now, the plugin is pretty basic. This is my first plugin as well, so I'm still polishing things.
 
+## Features
+
+Allows setting hearts, foodpoints, saturation and potion effects to user and player
+
 ## Backwards Compatibility
 
 Should work on plenty of version's of Spigot, I just haven't gotten around to testing them yet. Unless Minecraft changes something drastically(like when 1.6 released and changed Health points from an int to double), I doubt it will break for a while. And if it does do that, I'll be here to fix it hopefully
 
 ## Commands
 
-* **/myhearts** OR **/mht** [amount 0-20] to set the sender's health amount
+* **/hearts** OR **/ht** <optional:player> [amount 0-20] to set the user/player's health amount
 
-* **/myfood** OR **/mfp** [amount 0-20] to set the sender's foodpoint amount
+* **/foodpoints** OR **/fp** <optional:player> [amount 0-20] to set the user/player's foodpoint amount
 
-* **/mysaturation** OR **/mysat** [amount 0-5] to set the sender's saturation amount
+* **/saturation** OR **/sat** <optional:player> [amount 0-5] to set the user/player's saturation amount
 
-* **/hearts** OR **/ht** [user] [amount 0-20] to set the player's health amount
-
-* **/foodpoints** OR **/fp** [user] [amount 0-20] to set the player's foodpoint amount
-
-* **/saturation** OR **/sat** [user] [amount 0-5] to set the player's saturation amount
+* **/potion** OR **/sat** <optional:player> <type> [duration] [amplifier] to set the user/player's potion effects
 
 ## Permissions
 
-* **healthy.hearts** - to set other player's hearts
+* **healthy.hearts** - Allow setting user and player's hearts
 
-* **healthy.myhearts** - to set sender's hearts
+* **healthy.foodpoints** - Allow setting user and player's food points
 
-* **healthy.foodpoints** - to set other player's food points
+* **healthy.sat** - Allow setting user and player's saturation
 
-* **healthy.myfood** - to set sender's food points
-
-* **healthy.sat** - to set other player's saturation
-
-* **healthy.mysat** - to set sender's saturation
+* **healthy.potion** - Allow setting user and player's potion effects
 
 ## Download
 
