@@ -21,13 +21,13 @@ public class Hearts implements CommandExecutor{
 		}
 		Player player = (Player) sender;
 		
-		// hearts
+		// hearts 
 		
 		if(cmd.getName().equalsIgnoreCase("Hearts") || cmd.getName().equalsIgnoreCase("ht")) {
 			
 			if(player.hasPermission("healthy.hearts") == true) {
 				if (args.length == 0) {
-					player.sendMessage(ChatColor.RED + "Please specify /hearts [player] [amount]");
+					player.sendMessage(ChatColor.RED + "Please specify /hearts [player] [amount] or /hearts [amount]");
 					return true;
 				}
 				else if (args.length == 1) {
@@ -37,8 +37,19 @@ public class Hearts implements CommandExecutor{
 						player.sendMessage(ChatColor.YELLOW + "Hearts adjusted for player");
 						return true;
 					}else {
-						player.sendMessage(ChatColor.RED + "Player not online!");
-						return true;
+						if (isNum(args[0])){
+							double healthamt = Integer.parseInt(args[0]);
+							if (healthamt >= 0 && healthamt <= 20) {
+								
+								player.setHealth(healthamt);
+								player.sendMessage(ChatColor.YELLOW + "No player specified, setting your hearts...");
+								return true;
+							}else{
+								player.sendMessage(ChatColor.RED + "Specify within 0-20");
+								return true;
+							}
+
+						}
 					}
 				}
 			
@@ -48,25 +59,25 @@ public class Hearts implements CommandExecutor{
 						if(isNum(args[1])) {
 							
 						
-						final Player targetPlayer = player.getServer().getPlayer(args[0]);
+							final Player targetPlayer = player.getServer().getPlayer(args[0]);
 							double healthamt = Integer.parseInt(args[1]);
 						
 						
-						if (healthamt >= 0 && healthamt <= 20) {
-							targetPlayer.setHealth(healthamt);
-							player.sendMessage(ChatColor.YELLOW + "Hearts adjusted for player");
-							return true;
-						}else {
-							player.sendMessage(ChatColor.RED + "Specify within 0-20");
-							return true;
-						}
+							if (healthamt >= 0 && healthamt <= 20) {
+								targetPlayer.setHealth(healthamt);
+								player.sendMessage(ChatColor.YELLOW + "Hearts adjusted for player");
+								return true;
+							}else {
+								player.sendMessage(ChatColor.RED + "Specify within 0-20");
+								return true;
+							}
 						}
 					
-				}else {
-					player.sendMessage(ChatColor.RED + "Player not online!");
-					return true;
+					} else if (player.getServer().getPlayer(args[0]) == null) {
+						player.sendMessage(ChatColor.RED + "Player not online!");
+						return true;
+					}
 				}
-			}
 			}else {
 				player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
 			}

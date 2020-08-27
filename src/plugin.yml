@@ -6,13 +6,9 @@ api-version: 1.16
 
 commands:
   hearts:
-    description: Sets users hearts to amount specified, if no amount is specified then it defaults to 20(max health).
-    usage: /<command> [player] [amount]
+    description: Sets users hearts to amount specified, if no player is specified(only numeric value) then user's health will change.
+    usage: /<command> [player] [amount] or /<command> [amount]
     aliases: ht
-  myhearts:
-    description: Sets hearts to an amount or max(20) if not specified
-    usage: /<command> [amount]
-    aliases: mht
   foodpoints:
     description: Sets users foodpoints to an amount or max(20) if not specified
     usage: /<command> [player] [amount]

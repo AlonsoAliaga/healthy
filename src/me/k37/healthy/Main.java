@@ -8,7 +8,7 @@ public class Main extends JavaPlugin{
 	@Override
 	public void onEnable() {
 		//startup
-		this.getCommand("MyHearts").setExecutor(new MyHearts());
+		
 		this.getCommand("Hearts").setExecutor(new Hearts());
 		this.getCommand("MyFood").setExecutor(new MyFood());
 		this.getCommand("FoodPoints").setExecutor(new FoodPoints());
