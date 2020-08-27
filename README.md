@@ -27,7 +27,7 @@ Should work on plenty of version's of Spigot, I just haven't gotten around to te
 
 * **/saturation** OR **/sat** <optional:player> [amount 0-5] to set the user/player's saturation amount
 
-* **/potion** OR **/sat** <optional:player> <type> [duration] [amplifier] to set the user/player's potion effects
+* **/potion** OR **/pot** <optional:player> <type> [duration] [amplifier] to set the user/player's potion effects
 
 ## Permissions
 
