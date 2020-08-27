@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-public class MyPotion implements CommandExecutor{
+public class Potion implements CommandExecutor{
 	
 	
 
@@ -25,8 +25,8 @@ public class MyPotion implements CommandExecutor{
 		
 		// Potion
 		
-		if(cmd.getName().equalsIgnoreCase("MyPotion") || cmd.getName().equalsIgnoreCase("mp")) {
-			if(player.hasPermission("healthy.mypotion") == true) {
+		if(cmd.getName().equalsIgnoreCase("potion") || cmd.getName().equalsIgnoreCase("pot")) {
+			if(player.hasPermission("healthy.potion") == true) {
 				try {
 
 					if (args.length == 3) {
@@ -43,12 +43,35 @@ public class MyPotion implements CommandExecutor{
 						}
 					
 					
-					} else {
-						player.sendMessage(ChatColor.RED + "Do /mp <type> [duration] [amplifier]");
+					} else if (args.length == 4){
+							if (player.getServer().getPlayer(args[0]) != null) {
+								if(isNum(args[2]) && (isNum(args[3])) ) {
+							
+									final Player targetPlayer = player.getServer().getPlayer(args[0]);
+
+									String type = (args[1]);
+									int duration = Integer.parseInt(args[2]);
+									int amplifier = Integer.parseInt(args[3]);
+						
+						
+						
+									targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.getByName(type), duration, amplifier));
+									return true;
+							}else {
+								player.sendMessage(ChatColor.RED + "Do /mp <optional:player> <type> [duration] [amplifier]");
+								player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS ");
+							}
+						}else {
+							player.sendMessage(ChatColor.RED + "Player not online!");
+						}
+					
+					
+					}else {
+						player.sendMessage(ChatColor.RED + "Do /mp <optional:player> <type> [duration] [amplifier]");
 						player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS ");
 					}
 				} catch (Exception e){
-					player.sendMessage(ChatColor.RED + "Do /mp <type> [duration] [amplifier]");
+					player.sendMessage(ChatColor.RED + "Do /mp <optional:player> <type> [duration] [amplifier]");
 					player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS ");
 					return true;
 				}

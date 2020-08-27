@@ -12,7 +12,7 @@ public class Main extends JavaPlugin{
 		this.getCommand("Hearts").setExecutor(new Hearts());
 		this.getCommand("FoodPoints").setExecutor(new FoodPoints());
 		this.getCommand("Saturation").setExecutor(new Saturation());
-		this.getCommand("MyPotion").setExecutor(new MyPotion());
+		this.getCommand("Potion").setExecutor(new Potion());
 		getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "[Healthy]: Enabled!");
 		//reloads
 		//plugin reloads

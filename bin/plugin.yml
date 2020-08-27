@@ -1,23 +1,23 @@
 main: me.k37.healthy.Main
 name: Healthy
-version: v1.0.8-alpha
+version: v2.0.0-alpha
 author: k37
 api-version: 1.16
 
 commands:
   hearts:
-    description: Sets player's hearts to amount specified, if no player is specified(only numeric value) then user's health will change.
+    description: Sets user/player's hearts
     usage: /<command> [player] [amount] or /<command> [amount]
     aliases: ht
   foodpoints:
-    description: Sets player's food points to amount specified, if no player is specified(only numeric value) then user's food points will change.
+    description: Sets user/player's food points 
     usage: /<command> [player] [amount] or /command [amount]
     aliases: fp
   saturation:
-    description: Sets player's saturation to amount specified, if no player is specified(only numeric value) then user's health will change.
+    description: Sets user/player's saturation
     usage: /<command> [player] [amount] or /<command> [amount]
     aliases: sat
-  mypotion:
+  potion:
     description: Set Potion
     usage: /<command> [amount]
-    aliases: mp
+    aliases: pot
