@@ -1,6 +1,6 @@
 main: me.k37.healthy.Main
 name: Healthy
-version: v1.0.7-alpha
+version: v1.0.8-alpha
 author: k37
 api-version: 1.16
 
@@ -29,3 +29,7 @@ commands:
     description: Sets saturation to an amount or max(5) if not specified
     usage: /<command> [amount]
     aliases: mysat
+  mypotion:
+    description: Set Potion
+    usage: /<command> [amount]
+    aliases: mp
