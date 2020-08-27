@@ -44,9 +44,12 @@ public class Hearts implements CommandExecutor{
 			
 				else if (args.length >= 2) {
 					if (player.getServer().getPlayer(args[0]) != null) {
-						final Player targetPlayer = player.getServer().getPlayer(args[0]);
 						
-						double healthamt = Integer.parseInt(args[1]);
+						if(isNum(args[1])) {
+							
+						
+						final Player targetPlayer = player.getServer().getPlayer(args[0]);
+							double healthamt = Integer.parseInt(args[1]);
 						
 						
 						if (healthamt >= 0 && healthamt <= 20) {
@@ -56,6 +59,7 @@ public class Hearts implements CommandExecutor{
 						}else {
 							player.sendMessage(ChatColor.RED + "Specify within 0-20");
 							return true;
+						}
 						}
 					
 				}else {

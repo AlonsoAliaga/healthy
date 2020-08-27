@@ -32,6 +32,7 @@ public class MyFood implements CommandExecutor{
 					player.setFoodLevel(20);
 					return true;
 				}else if (args.length == 1) {
+					if(isNum(args[0])) {
 				
 					int foodspec = Integer.parseInt(args[0]);
 					if (foodspec >= 0 && foodspec <= 20) {
@@ -43,7 +44,7 @@ public class MyFood implements CommandExecutor{
 						player.sendMessage(ChatColor.RED + "Please specify amount between [0-20]");
 						return true;
 					}
-				
+					}
 				
 			}
 		}else {

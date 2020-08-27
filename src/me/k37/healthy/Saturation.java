@@ -25,8 +25,6 @@ public class Saturation implements CommandExecutor{
 		
 		if(cmd.getName().equalsIgnoreCase("Saturation") || cmd.getName().equalsIgnoreCase("sat")) {
 			if(player.hasPermission("healthy.sat") == true) {
-
-			
 				if (args.length == 0) {
 					player.sendMessage(ChatColor.RED + "Please specify /saturation [player] [amount]");
 					return true;
@@ -45,6 +43,8 @@ public class Saturation implements CommandExecutor{
 			
 				else if (args.length >= 2) {
 					if (player.getServer().getPlayer(args[0]) != null) {
+						
+						if(isNum(args[1])) {
 						final Player targetPlayer = player.getServer().getPlayer(args[0]);
 						
 						int satamt = Integer.parseInt(args[1]);
@@ -58,6 +58,7 @@ public class Saturation implements CommandExecutor{
 							player.sendMessage(ChatColor.RED + "Specify within 0-5");
 							return true;
 						}
+						}
 					
 				}else {
 					player.sendMessage(ChatColor.RED + "Player not online!");
@@ -66,11 +67,10 @@ public class Saturation implements CommandExecutor{
 			}
 			
 			
-		}
 		}else {
 			player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
 		}
-			
+		}
 			
 			
 		return true;

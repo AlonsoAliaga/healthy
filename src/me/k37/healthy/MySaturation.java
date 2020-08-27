@@ -31,7 +31,7 @@ public class MySaturation implements CommandExecutor{
 					player.setSaturation(5);
 					return true;
 				}else if (args.length == 1) {
-				
+					if(isNum(args[0])) {
 					int satspec = Integer.parseInt(args[0]);
 					if (satspec >= 0 && satspec <= 5) {
 					
@@ -42,7 +42,7 @@ public class MySaturation implements CommandExecutor{
 						player.sendMessage(ChatColor.RED + "Please specify amount between [0-5]");
 						return true;
 					}
-				
+					}
 				
 			}
 		}else {

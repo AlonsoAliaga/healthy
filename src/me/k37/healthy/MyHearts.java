@@ -26,6 +26,7 @@ public class MyHearts implements CommandExecutor{
 		
 		if(cmd.getName().equalsIgnoreCase("MyHearts") || cmd.getName().equalsIgnoreCase("ht")) {
 			if(player.hasPermission("healthy.myhearts") == true) {
+				
 
 				if (args.length == 0) {
 					double maxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue();
@@ -33,6 +34,8 @@ public class MyHearts implements CommandExecutor{
 					player.setHealth(maxHealth);
 					return true;
 				}else if (args.length == 1) {
+					
+					if(isNum(args[0])) {
 				
 					double healthspec = Integer.parseInt(args[0]);
 					if (healthspec >= 0 && healthspec <= 20) {
@@ -43,6 +46,7 @@ public class MyHearts implements CommandExecutor{
 					}else {
 						player.sendMessage(ChatColor.RED + "Please specify amount between [0-20]");
 						return true;
+					}
 					}
 				
 				

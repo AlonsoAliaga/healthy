@@ -44,6 +44,8 @@ public class FoodPoints implements CommandExecutor{
 			
 				else if (args.length >= 2) {
 					if (player.getServer().getPlayer(args[0]) != null) {
+						
+						if(isNum(args[1])) {
 						final Player targetPlayer = player.getServer().getPlayer(args[0]);
 						
 						int foodamt = Integer.parseInt(args[1]);
@@ -56,6 +58,7 @@ public class FoodPoints implements CommandExecutor{
 						}else {
 							player.sendMessage(ChatColor.RED + "Specify within 0-20");
 							return true;
+						}
 						}
 					
 				}else {
