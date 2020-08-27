@@ -26,6 +26,8 @@ public class Saturation implements CommandExecutor{
 		if(cmd.getName().equalsIgnoreCase("Saturation") || cmd.getName().equalsIgnoreCase("sat")) {
 			if(player.hasPermission("healthy.sat") == true) {
 				if (args.length == 0) {
+					player.setSaturation(5);
+					player.sendMessage(ChatColor.YELLOW + "Nothing specified, defaulting to max saturation");
 					player.sendMessage(ChatColor.RED + "Please specify /saturation [player] [amount]");
 					return true;
 				}

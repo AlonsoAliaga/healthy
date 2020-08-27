@@ -27,6 +27,8 @@ public class FoodPoints implements CommandExecutor{
 			
 			if(player.hasPermission("healthy.foodpoints") == true) {
 				if (args.length == 0) {
+					player.setFoodLevel(20);
+					player.sendMessage(ChatColor.YELLOW + "Nothing specified, defaulting to max food points");
 					player.sendMessage(ChatColor.RED + "Please specify /foodpoints [player] [amount]");
 					return true;
 				}
@@ -37,8 +39,22 @@ public class FoodPoints implements CommandExecutor{
 						player.sendMessage(ChatColor.YELLOW + "Foodpoints adjusted for player");
 						return true;
 					}else {
-						player.sendMessage(ChatColor.RED + "Player not online!");
-						return true;
+						if (isNum(args[0])){
+							int foodamt = Integer.parseInt(args[0]);
+							if (foodamt >= 0 && foodamt <= 20) {
+								
+								player.setFoodLevel(foodamt);
+								player.sendMessage(ChatColor.YELLOW + "No player specified, setting your food points...");
+								return true;
+							}else{
+								player.sendMessage(ChatColor.RED + "Specify within 0-20");
+								return true;
+							}
+
+						} else {
+							player.sendMessage(ChatColor.RED + "Specify within 0-20");
+							return true;
+						}
 					}
 				}
 			
@@ -59,6 +75,9 @@ public class FoodPoints implements CommandExecutor{
 							player.sendMessage(ChatColor.RED + "Specify within 0-20");
 							return true;
 						}
+						} else {
+							player.sendMessage(ChatColor.RED + "Specify within 0-20");
+							return true;
 						}
 					
 				}else {

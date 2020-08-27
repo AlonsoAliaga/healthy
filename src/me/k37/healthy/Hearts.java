@@ -27,6 +27,8 @@ public class Hearts implements CommandExecutor{
 			
 			if(player.hasPermission("healthy.hearts") == true) {
 				if (args.length == 0) {
+					player.setHealth(20);
+					player.sendMessage(ChatColor.YELLOW + "Nothing specified, defaulting to max health");
 					player.sendMessage(ChatColor.RED + "Please specify /hearts [player] [amount] or /hearts [amount]");
 					return true;
 				}

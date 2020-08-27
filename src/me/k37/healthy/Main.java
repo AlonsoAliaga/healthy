@@ -10,7 +10,6 @@ public class Main extends JavaPlugin{
 		//startup
 		
 		this.getCommand("Hearts").setExecutor(new Hearts());
-		this.getCommand("MyFood").setExecutor(new MyFood());
 		this.getCommand("FoodPoints").setExecutor(new FoodPoints());
 		this.getCommand("Saturation").setExecutor(new Saturation());
 		this.getCommand("MyPotion").setExecutor(new MyPotion());

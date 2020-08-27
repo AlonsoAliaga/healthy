@@ -6,21 +6,17 @@ api-version: 1.16
 
 commands:
   hearts:
-    description: Sets users hearts to amount specified, if no player is specified(only numeric value) then user's health will change.
+    description: Sets player's hearts to amount specified, if no player is specified(only numeric value) then user's health will change.
     usage: /<command> [player] [amount] or /<command> [amount]
     aliases: ht
   foodpoints:
-    description: Sets users foodpoints to an amount or max(20) if not specified
-    usage: /<command> [player] [amount]
+    description: Sets player's food points to amount specified, if no player is specified(only numeric value) then user's food points will change.
+    usage: /<command> [player] [amount] or /command [amount]
     aliases: fp
   saturation:
-    description: Sets users saturation to an amount or max(5s) if not specified
-    usage: /<command> [player] [amount]
+    description: Sets player's saturation to amount specified, if no player is specified(only numeric value) then user's health will change.
+    usage: /<command> [player] [amount] or /<command> [amount]
     aliases: sat
-  myfood:
-    description: Sets foodpoints to an amount or max(20) if not specified
-    usage: /<command> [amount]
-    aliases: mfp
   mypotion:
     description: Set Potion
     usage: /<command> [amount]

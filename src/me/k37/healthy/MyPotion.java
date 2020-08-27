@@ -13,7 +13,7 @@ public class MyPotion implements CommandExecutor{
 	
 
 
-	//m
+	//myPotion
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		
