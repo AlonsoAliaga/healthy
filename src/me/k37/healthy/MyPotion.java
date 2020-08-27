@@ -27,13 +27,9 @@ public class MyPotion implements CommandExecutor{
 		
 		if(cmd.getName().equalsIgnoreCase("MyPotion") || cmd.getName().equalsIgnoreCase("mp")) {
 			if(player.hasPermission("healthy.mypotion") == true) {
-				if (args.length < 3) {
-					player.sendMessage(ChatColor.RED + "Do /mp <type> [duration] [amplifier]");
-					player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS, WITHER ");
-				}
 				try {
 
-				if (args.length >= 3) {
+				if (args.length == 3) {
 					if(isNum(args[1]) && (isNum(args[2])) ) {
 					
 					String type = (args[0]);
@@ -46,11 +42,15 @@ public class MyPotion implements CommandExecutor{
 					return true;
 					}
 					
-				}
-				} catch (Exception e) {
+					
+				} else {
 					player.sendMessage(ChatColor.RED + "Do /mp <type> [duration] [amplifier]");
-					player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS, WITHER ");
-
+					player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS ");
+				}
+				} catch (Exception e){
+					player.sendMessage(ChatColor.RED + "Do /mp <type> [duration] [amplifier]");
+					player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS ");
+					return true;
 				}
 				
 				
