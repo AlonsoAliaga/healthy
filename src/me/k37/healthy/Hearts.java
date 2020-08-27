@@ -37,7 +37,7 @@ public class Hearts implements CommandExecutor{
 						player.sendMessage(ChatColor.YELLOW + "Hearts adjusted for player");
 						return true;
 					}else {
-						if (isNum(args[0])){
+						if (isNum(args[0])){ 
 							double healthamt = Integer.parseInt(args[0]);
 							if (healthamt >= 0 && healthamt <= 20) {
 								
@@ -49,6 +49,9 @@ public class Hearts implements CommandExecutor{
 								return true;
 							}
 
+						} else {
+							player.sendMessage(ChatColor.RED + "Specify within 0-20");
+							return true;
 						}
 					}
 				}
@@ -71,6 +74,9 @@ public class Hearts implements CommandExecutor{
 								player.sendMessage(ChatColor.RED + "Specify within 0-20");
 								return true;
 							}
+						} else {
+							player.sendMessage(ChatColor.RED + "Specify within 0-20");
+							return true;
 						}
 					
 					} else if (player.getServer().getPlayer(args[0]) == null) {

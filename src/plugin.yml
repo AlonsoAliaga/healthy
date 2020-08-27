@@ -21,10 +21,6 @@ commands:
     description: Sets foodpoints to an amount or max(20) if not specified
     usage: /<command> [amount]
     aliases: mfp
-  mysaturation:
-    description: Sets saturation to an amount or max(5) if not specified
-    usage: /<command> [amount]
-    aliases: mysat
   mypotion:
     description: Set Potion
     usage: /<command> [amount]

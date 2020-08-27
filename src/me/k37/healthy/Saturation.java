@@ -36,8 +36,22 @@ public class Saturation implements CommandExecutor{
 						player.sendMessage(ChatColor.YELLOW + "Saturation adjusted for player");
 						return true;
 					}else {
-						player.sendMessage(ChatColor.RED + "Player not online!");
-						return true;
+						if (isNum(args[0])){
+							int satamt = Integer.parseInt(args[0]);
+							if (satamt >= 0 && satamt <= 5) {
+								
+								player.setSaturation(satamt);
+								player.sendMessage(ChatColor.YELLOW + "No player specified, setting your saturation...");
+								return true;
+							}else{
+								player.sendMessage(ChatColor.RED + "Specify within 0-5");
+								return true;
+							}
+
+						} else {
+							player.sendMessage(ChatColor.RED + "Specify within 0-5");
+							return true;
+						}
 					}
 				}
 			
@@ -58,6 +72,9 @@ public class Saturation implements CommandExecutor{
 							player.sendMessage(ChatColor.RED + "Specify within 0-5");
 							return true;
 						}
+						} else {
+							player.sendMessage(ChatColor.RED + "Specify within 0-5");
+							return true;
 						}
 					
 				}else {
