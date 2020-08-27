@@ -1,7 +1,6 @@
 package me.k37.healthy;
 
 import org.bukkit.ChatColor;
-import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -29,9 +28,8 @@ public class MyHearts implements CommandExecutor{
 				
 
 				if (args.length == 0) {
-					double maxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue();
 					player.sendMessage(ChatColor.YELLOW + "Hearts set to 20.");
-					player.setHealth(maxHealth);
+					player.setHealth(20);
 					return true;
 				}else if (args.length == 1) {
 					
