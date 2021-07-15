@@ -24,15 +24,15 @@ public class Potion implements CommandExecutor{
 		Player player = (Player) sender;
 		
 		// Potion
+		//There is no need to check if cmd is one or the other.
 		
-		if(cmd.getName().equalsIgnoreCase("potion") || cmd.getName().equalsIgnoreCase("pot")) {
-			if(player.hasPermission("healthy.potion") == true) {
+			if(player.hasPermission("healthy.potion")) { //You don't need to check if its == true, it returns a boolean already (Suggestion: Make perms configurable)
 				try {
 
 					if (args.length == 3) {
 						if(isNum(args[1]) && (isNum(args[2])) ) {
 					
-						String type = (args[0]);
+						String type = args[0]; //No need for parenthesis.
 						int duration = Integer.parseInt(args[1]);
 						int amplifier = Integer.parseInt(args[2]);
 					
@@ -58,6 +58,7 @@ public class Potion implements CommandExecutor{
 									targetPlayer.addPotionEffect(new PotionEffect(PotionEffectType.getByName(type), duration, amplifier));
 									return true;
 							}else {
+									//Suggestion: Make messages configurable
 								player.sendMessage(ChatColor.RED + "Do /mp <optional:player> <type> [duration] [amplifier]");
 								player.sendMessage(ChatColor.RED + "Types: ABSORPTION, BAD_OMEN, BLINDNESS, CONDUIT_POWER, CONFUSION, DAMAGE_RESISTANCE, DOLPHINS_GRACE, FAST_DIGGING, FIRE_RESISTANCE, GLOWING, HARM, HEAL, HEALTH_BOOST, HERO_OF_THE_VILLAGE, HUNGER, INCREASE_DAMAGE, INVISIBILITY, JUMP, LEVITATION, LUCK, NIGHT_VISION, POISON, REGENERATION, SATURATION, SLOW, SLOW_DIGGING, SLOW_FALLING, SPEED, UNLUCK, WATER_BREATHING, WEAKNESS ");
 							}
@@ -81,9 +82,6 @@ public class Potion implements CommandExecutor{
 				player.sendMessage(ChatColor.RED + "Execute Order Sixty Si....uh no permission!");
 			}
 			
-		return true;
-		
-		}
 	
 	return true;
 	
